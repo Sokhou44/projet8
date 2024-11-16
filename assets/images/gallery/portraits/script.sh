@@ -12,5 +12,5 @@ for image in *.jpg; do
     # Vérifie si le fichier existe
     if [[ -f "$image" ]]; then
         # Convertit le fichier en .webp avec une qualité de 85
-        magick convert "$image" -quality 85 "${image%.png}.webp"
+        magick convert "$image" -quality 85 "${image%.jpg}.webp"
         echo "Converti : $image -> ${image%.jpg}.w

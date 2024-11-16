@@ -1,3 +1,4 @@
+#!/bin/bash
 # Ce script convertit tous les fichiers JPG en fichiers WEBP dans le dossier actuel
 # avec une qualité de 85.
 
@@ -12,5 +13,9 @@ for image in *.jpg; do
     # Vérifie si le fichier existe
     if [[ -f "$image" ]]; then
         # Convertit le fichier en .webp avec une qualité de 85
-        magick convert "$image" -quality 85 "${image%.png}.webp"
-        echo "Converti : $image -> ${image%.jpg}.w
+        magick convert "$image" -quality 85 "${image%.jpg}.webp"
+        echo "Converti : $image -> ${image%.jpg}.webp"
+    else
+        echo "Aucun fichier .jpg trouvé dans le dossier."
+    fi
+done
